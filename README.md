@@ -1,6 +1,6 @@
 #### Scholar-ws: Scholar.py Web Service Project
 
-##### Motivation: Make scholar.py [to](https://github.com/ckreibich/scholar.py/) offer a cloud service for academic users.
+##### Motivation: Contribute [scholar.py]((https://github.com/ckreibich/scholar.py/) ) to offer a cloud service for academic users.
 
 The solution is java based  and use Spring Boot without any backend database and cache.
 
