@@ -1,14 +1,14 @@
-#### Scholar-ws: Extend Scholar.py to be Web Service
+#### Scholar-ws: Scholar.py Web Service Project
 
-##### Motivation: Make sholar.py [to](https://github.com/ckreibich/scholar.py/) offer a cloud service for academic users.
+##### Motivation: Make scholar.py [to](https://github.com/ckreibich/scholar.py/) offer a cloud service for academic users.
 
 The solution is java based  and use Spring Boot without any backend database and cache.
 
 It is working fine for my case, to search a paper with the title and get the bibtex item.
 
-And more requirement please let me know. If an open access cloud machine is to be provided,
+And more requirements please let me know. If an open access cloud machine is to be provided,
 
-Special thanks will go to you on behalf of all the potential users.
+special thanks will go to you on behalf of all the potential users.
 
 ##### Deploy:
 
@@ -23,7 +23,7 @@ cd ./scholar-ws
 mvn spring-boot:run 
 ```
 
-if everything is ok,  click http://localhost:8080/index to rush !
+if everything is ok,  click http://localhost:8080/index to explore !
 
 ##### Contact:
 
