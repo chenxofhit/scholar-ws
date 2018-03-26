@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Google Scholar</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">  
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<h4>Google Scholar Service+ </h4>
+
+<div class="form-group">
+    <label for="name">Keywords</label>
+    <textarea class="form-control" rows="2" id="txtarea"></textarea>
+  </div>
+	
+<label for="name">Export Format</label>
+<div>
+    <label class="radio-inline">
+        <input type="radio" name="optionsRadiosinline" id="optionsRadios1" value="bt" checked> Bibtex
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="optionsRadiosinline" id="optionsRadios2"  value="en"> EndNote
+    </label>
+        <label class="radio-inline">
+        <input type="radio" name="optionsRadiosinline" id="optionsRadios3"  value="rm"> RefMan
+    </label>
+        <label class="radio-inline">
+        <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="rw"> RefWorks
+    </label>
+            <label class="radio-inline">
+        <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="others"> Ignore
+    </label>
+</div>
+
+<button class="btn btn-default" id="btn">GO !</button>
+
+<p id="p"></p>
+
+<script>
+
+$("#btn").bind('click', function (event){
+	var keywords = document.getElementById("txtarea").value;
+	if(keywords.length <= 0){
+		alert('Keyword is Required !');
+		return;
+	}
+	$("#p").empty().append("Searching...");
+	$.ajax({
+        url: '/query',
+        type: 'post',
+		data:{'topic':keywords,
+		"type":	$("input[type='radio']:checked").val()
+		},        
+        success: function(response) {
+        	 if (response.code == 200) {
+        	 	$("#p").empty().append(response.msg);
+        	 }else{
+        		 $("#p").empty().append(response.msg);
+        	 }
+        }
+	});
+	
+})
+
+</script>
+  
+</body>
+</html>
